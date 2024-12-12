@@ -70,7 +70,7 @@ class NewsCrawler:
                     'source': 'gnews',
                     'category': categories,
                     # 反代 google api 获取站点的logo
-                    'logo': f'https://api.findings.liurb.org/tool/favicon?url={domain}',
+                    'logo': f'https://fastapi-tool-api.liurb.org/tool/favicon?url={domain}',
                     'url': item['url'],
                     'url_sid': sign_util.sha256_hash(item['url']),
                     'publisher': item['source']['name'],
