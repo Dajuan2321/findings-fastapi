@@ -72,25 +72,5 @@ def extract_base_url(url):
 def get_main_domain(url):
     # 解析URL并获取netloc部分
     parsed_url = urlparse(url)
-    netloc = parsed_url.netloc
-
-    # 分离出可能存在的端口号
-    if ':' in netloc:
-        netloc = netloc.split(':')[0]
-
-    # 将netloc按点分割成列表
-    parts = netloc.split('.')
-
-    # 简单的规则：假设最后两个部分是主域名和顶级域名
-    # 注意：这并不是一个通用的解决方案，对于复杂的TLD（如 .co.uk ）可能会失败
-    if len(parts) > 2:
-        # 去除 'www' 子域名
-        if parts[0].lower() == 'www':
-            parts = parts[1:]
-        # 这里假设最后两部分为主域名和顶级域名
-        main_domain = '.'.join(parts[-2:])
-    else:
-        # 对于只有两个部分的情况，直接返回
-        main_domain = netloc
-
-    return main_domain
+    # 输出 www.example.com
+    return parsed_url.netloc
