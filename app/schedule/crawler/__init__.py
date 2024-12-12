@@ -1,0 +1,1 @@
+from .gnews import NewsCrawler
