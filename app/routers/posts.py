@@ -16,6 +16,7 @@ class PostsItem(BaseModel):
     title: str
     thumbnail: Optional[str]
     description: Optional[str]
+    content: Optional[str]
     url: str
     url_sid: Optional[str]
     source: Optional[str]
